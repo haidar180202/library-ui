@@ -1,0 +1,123 @@
+/* components/Stepper.module.css */
+
+.stepper {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .progress {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .horizontal {
+    flex-direction: row;
+  }
+  
+  .vertical {
+    flex-direction: column;
+  }
+  
+  .step {
+    flex: 1;
+    position: relative;
+    color: gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .stepLabel {
+    margin-top: 5px;
+    text-align: center;
+  }
+  
+  .stepIndicator {
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .step.active .stepIndicator {
+    background-color: #3f51b5;
+    color: white;
+  }
+  
+  .content {
+    transition: opacity 0.5s ease;
+  }
+  
+  .verticalContent {
+    position: relative; /* Necessary for positioning */
+    overflow: hidden; /* Hide overflow for animation */
+  }
+  
+  .slideInLeft {
+    animation: slideInLeft 0.3s forwards; /* Animation when going to previous step */
+  }
+  
+  .slideInRight {
+    animation: slideInRight 0.3s forwards; /* Animation when going to next step */
+  }
+  
+  @keyframes slideInLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .buttons {
+    margin-top: 20px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3f51b5;
+    color: white;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:disabled {
+    background-color: #c0c0c0;
+    cursor: not-allowed;
+  }
+  
+  .button:not(:disabled):hover {
+    background-color: #303f9f;
+  }
+  
+  .stepInfo {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #666;
+  }
+  

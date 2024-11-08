@@ -1,0 +1,74 @@
+/* components/Modal.module.css */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.9);
+  }
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s forwards;
+}
+
+.modalOverlay.hidden {
+  animation: fadeOut 0.3s forwards;
+}
+
+.modal {
+  background-color: #F2F2F7;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  animation: scaleIn 0.3s forwards;
+}
+
+.modal.hidden {
+  animation: scaleOut 0.3s forwards;
+}
+
+.modalBody {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.modalHeader {
+  z-index: 10;
+}

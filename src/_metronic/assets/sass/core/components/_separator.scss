@@ -1,0 +1,99 @@
+.separator {
+    display: block;
+    height: 0;
+    border-bottom: 2px solid var(--#{$prefix}border-color);
+  
+    &.separator-dotted {
+      border-bottom-style: dotted;
+      border-bottom-color: var(--#{$prefix}border-dashed-color);
+    }
+  
+    &.separator-dashed {
+      border-bottom-style: dashed;
+      border-bottom-color: var(--#{$prefix}border-dashed-color);
+    }
+  
+    &.separator-content {
+      display: flex;
+      align-items: center;
+      border-bottom: 0;
+      text-align: center;
+  
+      &::before,
+      &::after {
+        content: " ";
+        width: 50%;
+        border-bottom: 2px solid var(--#{$prefix}border-color);
+      }
+  
+      &::before {
+        margin-right: 1.25rem;
+      }
+  
+      &::after {
+        margin-left: 1.25rem;
+      }
+  
+      &.separator-dotted::before,
+      &.separator-dotted::after {
+        border-bottom-style: dotted;
+        border-bottom-color: var(--#{$prefix}border-dashed-color);
+      }
+  
+      &.separator-dashed::before,
+      &.separator-dashed::after {
+        border-bottom-style: dashed;
+        border-bottom-color: var(--#{$prefix}border-dashed-color);
+      }
+    }
+  
+    &.separator-vertical {
+      display: inline-block;
+      height: 100px;
+      border-left: 2px solid var(--#{$prefix}border-color);
+  
+      &.separator-dotted {
+        border-left-style: dotted;
+        border-left-color: var(--#{$prefix}border-dashed-color);
+      }
+  
+      &.separator-dashed {
+        border-left-style: dashed;
+        border-left-color: var(--#{$prefix}border-dashed-color);
+      }
+  
+      &.separator-content {
+        flex-direction: column;
+        border-left: 0;
+        text-align: center;
+  
+        &::before,
+        &::after {
+          content: " ";
+          height: 50%;
+          border-left: 1px solid var(--#{$prefix}border-color);
+        }
+  
+        &::before {
+          margin-bottom: 1.25rem;
+        }
+  
+        &::after {
+          margin-top: 1.25rem;
+        }
+  
+        &.separator-dotted::before,
+        &.separator-dotted::after {
+          border-left-style: dotted;
+          border-left-color: var(--#{$prefix}border-dashed-color);
+        }
+  
+        &.separator-dashed::before,
+        &.separator-dashed::after {
+          border-left-style: dashed;
+          border-left-color: var(--#{$prefix}border-dashed-color);
+        }
+      }
+    }
+  }
+  
